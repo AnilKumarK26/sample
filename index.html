@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anil Kumar Kedarsetty - Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes colorShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #ecf0f1;
+            --background-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, var(--primary-color), var(--background-color), var(--secondary-color));
+            background-size: 400% 400%;
+            color: var(--text-color);
+            line-height: 1.6;
+            animation: colorShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .profile-container {
+            display: flex;
+            max-width: 1100px;
+            background-color: rgba(44, 62, 80, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+
+        .profile-container:hover {
+            transform: rotateY(10deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-image {
+            flex: 0 0 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--text-color);
+            transition: all 0.5s ease;
+            animation: pulse 3s infinite;
+            will-change: transform;
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: brightness(1.2);
+        }
+
+        .profile-info {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: slideIn 1s ease;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            animation: fadeIn 1.5s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-info p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: slideIn 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            will-change: transform, color;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                margin: 20px 10px;
+                transform: none;
+            }
+
+            .profile-container:hover {
+                transform: none;
+            }
+
+            .profile-image, .profile-info {
+                flex: 1 0 auto;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="WhatsApp Image 2024-08-27 at 19.31.37_b687f178.jpg" alt="Anil Kumar Kedarsetty">
+        </div>
+        <div class="profile-info">
+            <h1>Anil Kumar Kedarsetty</h1>
+            <p>Hello Everyone! I'm an enthusiastic Computer Science and Engineering student with a passion for pushing the boundaries of technology.</p>
+            <p>My academic journey is driven by an unwavering commitment to learning and innovation. I specialize in Artificial Intelligence and Machine Learning, constantly seeking to expand my knowledge and develop cutting-edge solutions to complex challenges.</p>
+            <p>My mission is to leverage technological advancements to create meaningful impact, transform ideas into reality, and contribute to solving real-world problems through intelligent and creative approaches.</p>
+            
+            <div class="contact-links">
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
